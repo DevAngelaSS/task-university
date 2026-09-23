@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Task University</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>Task University</h1>
+    <nav>
+        <a th:href="@{/tareas}">Tareas</a>
+        <a th:href="@{/usuarios}">Usuarios</a>
+        <a th:href="@{/dashboard}">Dashboard</a>
+    </nav>
+</header>
+<main>
+    <div class="resumen-dashboard">
+        <div class="tarjeta">
+            <div class="numero" th:text="${totalTareas}"></div>
+            <div>Tareas totales</div>
+        </div>
+        <div class="tarjeta">
+            <div class="numero" th:text="${tareasCompletadas}"></div>
+            <div>Tareas completadas</div>
+        </div>
+        <div class="tarjeta">
+            <div class="numero" th:text="${tareasPendientes}"></div>
+            <div>Tareas pendientes</div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

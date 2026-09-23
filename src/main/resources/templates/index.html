@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task University</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>Task University</h1>
+    <nav>
+        <a th:href="@{/tareas}">Tareas</a>
+        <a th:href="@{/usuarios}">Usuarios</a>
+        <a th:href="@{/dashboard}">Dashboard</a>
+    </nav>
+</header>
+<main>
+    <div class="tarjeta">
+        <h2>Bienvenido a Task University</h2>
+        <p>Gestiona tareas academicas, usuarios y revisa el avance desde el dashboard.</p>
+    </div>
+</main>
+</body>
+</html>

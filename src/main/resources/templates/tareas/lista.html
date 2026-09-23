@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas - Task University</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>Task University</h1>
+    <nav>
+        <a th:href="@{/tareas}">Tareas</a>
+        <a th:href="@{/usuarios}">Usuarios</a>
+        <a th:href="@{/dashboard}">Dashboard</a>
+    </nav>
+</header>
+<main>
+    <div class="tarjeta">
+        <h2>Registrar tarea</h2>
+        <form th:action="@{/tareas}" th:object="${tarea}" method="post">
+            <div>
+                <input type="text" th:field="*{titulo}" placeholder="Titulo de la tarea">
+                <span class="error" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span>
+            </div>
+            <textarea th:field="*{descripcion}" placeholder="Descripcion"></textarea>
+            <button type="submit">Guardar tarea</button>
+        </form>
+    </div>
+
+    <div class="tarjeta">
+        <h2>Listado de tareas</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="t : ${tareas}">
+                <td th:text="${t.titulo}"></td>
+                <td th:text="${t.descripcion}"></td>
+                <td>
+                    <span th:if="${t.completada}" class="etiqueta-completada">Completada</span>
+                    <span th:unless="${t.completada}" class="etiqueta-pendiente">Pendiente</span>
+                </td>
+                <td>
+                    <a class="boton" th:href="@{/tareas/completar/{id}(id=${t.id})}">Completar</a>
+                    <a class="boton" th:href="@{/tareas/editar/{id}(id=${t.id})}">Editar</a>
+                    <a class="boton boton-peligro" th:href="@{/tareas/eliminar/{id}(id=${t.id})}">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>
