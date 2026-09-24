@@ -2,12 +2,14 @@
 
 Aplicacion web para la gestion de tareas academicas, desarrollada como Trabajo Practico Calificado del curso de Control de Versiones en la Nube.
 
-## Integrantes
+## Integrantes y roles
 
-- Giovana
-- Angela
-- Diana
-- Jose
+| Integrante | Rol |
+|---|---|
+| Giovana | Modulo Tareas (feature-tareas) |
+| Jose | Modulo Usuarios (feature-usuarios) |
+| Diana | Modulo Dashboard (feature-dashboard) |
+| Angela | Configuracion del repositorio, gestion de ramas y documentacion tecnica |
 
 ## Tecnologias
 
@@ -40,3 +42,10 @@ Aplicacion web para la gestion de tareas academicas, desarrollada como Trabajo P
 - `main`: version estable.
 - `develop`: integracion de features.
 - `feature-usuarios`, `feature-tareas`, `feature-dashboard`: desarrollo por modulo.
+
+## Flujo de trabajo
+
+1. Cada integrante trabaja en su rama feature correspondiente.
+2. Al terminar un avance, hace commit y push a su rama.
+3. Abre un Pull Request hacia `develop`.
+4. Otro integrante revisa y aprueba antes de hacer merge.
